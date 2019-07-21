@@ -108,10 +108,10 @@
 					]
 				},
 				{
-					"pattern": "SupplierSet/{objectId}",
-					"name": "object",
+					"name": "Fruits_binded",
+					"pattern": "Fruits/{SupplierId}",
 					"target": [
-						"object"
+						"Fruits"
 					]
 				}
 			],
@@ -122,12 +122,6 @@
 					"viewLevel": 1,
 					"title": "{i18n>worklistViewTitle}"
 				},
-				"object": {
-					"viewName": "Object",
-					"viewId": "object",
-					"viewLevel": 2,
-					"title": "{i18n>objectViewTitle}"
-				},
 				"objectNotFound": {
 					"viewName": "ObjectNotFound",
 					"viewId": "objectNotFound"
@@ -135,6 +129,16 @@
 				"notFound": {
 					"viewName": "NotFound",
 					"viewId": "notFound"
+				},
+				"Fruits": {
+					"viewType": "XML",
+					"viewName": "Fruits"
+				}
+			},
+			"additionalData": {
+				"oft.demo.FruitsApp.view.Fruits": {
+					"routeName": "Fruits_binded",
+					"entitySet": "/SupplierSet"
 				}
 			}
 		}

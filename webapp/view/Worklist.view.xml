@@ -1,53 +1,21 @@
-<mvc:View
-	controllerName="oft.demo.FruitsApp.controller.Worklist"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic"
-	xmlns:footerbar="sap.ushell.ui.footerbar">
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="oft.demo.FruitsApp.controller.Worklist">
 
-	<semantic:SemanticPage
-		id="page"
-		headerPinnable="false"
-		toggleHeaderOnTitleClick="false">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
 
 		<semantic:titleHeading>
-			<Title
-				text="{i18n>worklistTitle}"
-				level="H2"/>
+			<Title text="{i18n&gt;worklistTitle}" level="H2"/>
 		</semantic:titleHeading>
 
 		<semantic:content>
-			<Table
-				id="table"
-				width="auto"
-				items="{
-					path: '/SupplierSet',
-					sorter: {
-						path: 'SupplierName',
-						descending: false
-					}
-				}"
-				noDataText="{worklistView>/tableNoDataText}"
-				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
-				growing="true"
-				growingScrollToLoad="true"
-				updateFinished=".onUpdateFinished">
+			<Table xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="table" width="auto" items="{      path: '/SupplierSet',      sorter: {       path: 'SupplierName',       descending: false      }     }" noDataText="{worklistView&gt;/tableNoDataText}" busyIndicatorDelay="{worklistView&gt;/tableBusyDelay}" growing="true" growingScrollToLoad="true" updateFinished=".onUpdateFinished" itemPress="onPress">
 
 				<headerToolbar>
 					<OverflowToolbar>
-						<Title
-							id="tableHeader"
-							text="{worklistView>/worklistTableTitle}"
-							level="H3"/>
-						<ToolbarSpacer />
-						<SearchField
-							id="searchField"
-							tooltip="{i18n>worklistSearchTooltip}"
-							search=".onSearch">
+						<Title id="tableHeader" text="{worklistView&gt;/worklistTableTitle}" level="H3"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n&gt;worklistSearchTooltip}" search=".onSearch">
 							<layoutData>
-								<OverflowToolbarLayoutData
-									maxWidth="200px"
-									priority="NeverOverflow"/>
+								<OverflowToolbarLayoutData maxWidth="200px" priority="NeverOverflow"/>
 							</layoutData>
 						</SearchField>
 					</OverflowToolbar>
@@ -55,22 +23,18 @@
 
 				<columns>
 					<Column id="nameColumn">
-						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+						<Text text="{i18n&gt;tableNameColumnTitle}" id="nameColumnTitle"/>
 					</Column>
 					<Column id="unitNumberColumn" hAlign="End">
-						<Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+						<Text text="{i18n&gt;tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
 					</Column>
 				</columns>
 
 				<items>
-					<ColumnListItem
-						type="Navigation"
-						press=".onPress">
+					<ColumnListItem type="Navigation" press=".onPress">
 						<cells>
-							<ObjectIdentifier
-								title="{SupplierName}"/>
-							<ObjectNumber
-								unit="{City}"/>
+							<ObjectIdentifier title="{SupplierName}"/>
+							<ObjectNumber unit="{City}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
@@ -82,11 +46,11 @@
 		</semantic:sendEmailAction>
 
 		<semantic:shareInJamAction>
-			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press=".onShareInJamPress"/>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP&gt;/isShareInJamActive}" press=".onShareInJamPress"/>
 		</semantic:shareInJamAction>
 
 		<semantic:saveAsTileAction>
-			<footerbar:AddBookmarkButton id ="shareTile" title="{worklistView>/saveAsTileTitle}" />
+			<footerbar:AddBookmarkButton id="shareTile" title="{worklistView&gt;/saveAsTileTitle}"/>
 		</semantic:saveAsTileAction>
 
 	</semantic:SemanticPage>

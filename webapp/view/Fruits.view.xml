@@ -1,0 +1,18 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:t="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="oft.demo.FruitsApp.controller.Fruits">
+	<App>
+		<pages>
+			<Page title="Fruits of Suppliers">
+				<content>
+					<t:Table>
+						
+					</t:Table>
+				    <List noDataText="Drop list items here" items="{path:'/ToSupplierFruits'}" id="list0">
+				        <items>
+				            <StandardListItem type="Navigation" title="{FruitId}" description="{Availability}" icon="sap-icon://picture" id="item0"/>
+				        </items>
+				    </List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

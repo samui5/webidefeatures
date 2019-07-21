@@ -85,15 +85,14 @@ sap.ui.define([
 			}
 			this.getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
 		},
-
-		/**
-		 * Event handler when a table item gets pressed
-		 * @param {sap.ui.base.Event} oEvent the table selectionChange event
-		 * @public
-		 */
-		onPress : function (oEvent) {
-			// The source is the list item that got pressed
-			this._showObject(oEvent.getSource());
+		
+		/* @param {sap.ui.base.Event} oEvent*/
+		onPress: function(oEvent, str){
+			/* @type sap.m.List*/
+			var oList = oEvent.getSource();
+			oList.getItems();
+			
+			this._showObject(oEvent.getSource());	
 		},
 
 
